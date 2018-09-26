@@ -13,6 +13,14 @@
 		C77C8FB9215B9887009803A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C77C8FB8215B9887009803A3 /* Assets.xcassets */; };
 		C77C8FBC215B9887009803A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C77C8FBA215B9887009803A3 /* LaunchScreen.storyboard */; };
 		C77C8FBF215B9887009803A3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FBE215B9887009803A3 /* main.m */; };
+		C77C8FCF215B9F0A009803A3 /* DavidEmotionPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FC7215B9F0A009803A3 /* DavidEmotionPageView.m */; };
+		C77C8FD0215B9F0A009803A3 /* DavidEmotionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FC9215B9F0A009803A3 /* DavidEmotionView.m */; };
+		C77C8FD1215B9F0A009803A3 /* DavidMediaView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FCB215B9F0A009803A3 /* DavidMediaView.m */; };
+		C77C8FD2215B9F0A009803A3 /* DavidTextBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FCD215B9F0A009803A3 /* DavidTextBar.m */; };
+		C77C8FD3215B9F0A009803A3 /* EmojiEmotion.plist in Resources */ = {isa = PBXBuildFile; fileRef = C77C8FCE215B9F0A009803A3 /* EmojiEmotion.plist */; };
+		C77C8FE4215BA928009803A3 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FE1215BA928009803A3 /* NSString+Emoji.m */; };
+		C77C8FE5215BA928009803A3 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FE3215BA928009803A3 /* UIView+Extension.m */; };
+		C77C8FE9215BA92F009803A3 /* UITextView+WZB.m in Sources */ = {isa = PBXBuildFile; fileRef = C77C8FE8215BA92F009803A3 /* UITextView+WZB.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,22 @@
 		C77C8FBB215B9887009803A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C77C8FBD215B9887009803A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C77C8FBE215B9887009803A3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C77C8FC6215B9F0A009803A3 /* DavidEmotionPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DavidEmotionPageView.h; sourceTree = "<group>"; };
+		C77C8FC7215B9F0A009803A3 /* DavidEmotionPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DavidEmotionPageView.m; sourceTree = "<group>"; };
+		C77C8FC8215B9F0A009803A3 /* DavidEmotionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DavidEmotionView.h; sourceTree = "<group>"; };
+		C77C8FC9215B9F0A009803A3 /* DavidEmotionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DavidEmotionView.m; sourceTree = "<group>"; };
+		C77C8FCA215B9F0A009803A3 /* DavidMediaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DavidMediaView.h; sourceTree = "<group>"; };
+		C77C8FCB215B9F0A009803A3 /* DavidMediaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DavidMediaView.m; sourceTree = "<group>"; };
+		C77C8FCC215B9F0A009803A3 /* DavidTextBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DavidTextBar.h; sourceTree = "<group>"; };
+		C77C8FCD215B9F0A009803A3 /* DavidTextBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DavidTextBar.m; sourceTree = "<group>"; };
+		C77C8FCE215B9F0A009803A3 /* EmojiEmotion.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmojiEmotion.plist; sourceTree = "<group>"; };
+		C77C8FDA215BA740009803A3 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		C77C8FE0215BA928009803A3 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		C77C8FE1215BA928009803A3 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
+		C77C8FE2215BA928009803A3 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		C77C8FE3215BA928009803A3 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		C77C8FE7215BA92F009803A3 /* UITextView+WZB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+WZB.h"; sourceTree = "<group>"; };
+		C77C8FE8215BA92F009803A3 /* UITextView+WZB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+WZB.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +82,14 @@
 		C77C8FAE215B9886009803A3 /* ChatToolBar */ = {
 			isa = PBXGroup;
 			children = (
+				C77C8FE6215BA92F009803A3 /* WZBTextView */,
+				C77C8FDF215BA928009803A3 /* Category */,
+				C77C8FC5215B9F0A009803A3 /* DavidTextBar */,
 				C77C8FAF215B9886009803A3 /* AppDelegate.h */,
 				C77C8FB0215B9886009803A3 /* AppDelegate.m */,
 				C77C8FB2215B9886009803A3 /* ViewController.h */,
 				C77C8FB3215B9886009803A3 /* ViewController.m */,
+				C77C8FDA215BA740009803A3 /* Header.h */,
 				C77C8FB5215B9886009803A3 /* Main.storyboard */,
 				C77C8FB8215B9887009803A3 /* Assets.xcassets */,
 				C77C8FBA215B9887009803A3 /* LaunchScreen.storyboard */,
@@ -69,6 +97,42 @@
 				C77C8FBE215B9887009803A3 /* main.m */,
 			);
 			path = ChatToolBar;
+			sourceTree = "<group>";
+		};
+		C77C8FC5215B9F0A009803A3 /* DavidTextBar */ = {
+			isa = PBXGroup;
+			children = (
+				C77C8FC6215B9F0A009803A3 /* DavidEmotionPageView.h */,
+				C77C8FC7215B9F0A009803A3 /* DavidEmotionPageView.m */,
+				C77C8FC8215B9F0A009803A3 /* DavidEmotionView.h */,
+				C77C8FC9215B9F0A009803A3 /* DavidEmotionView.m */,
+				C77C8FCA215B9F0A009803A3 /* DavidMediaView.h */,
+				C77C8FCB215B9F0A009803A3 /* DavidMediaView.m */,
+				C77C8FCC215B9F0A009803A3 /* DavidTextBar.h */,
+				C77C8FCD215B9F0A009803A3 /* DavidTextBar.m */,
+				C77C8FCE215B9F0A009803A3 /* EmojiEmotion.plist */,
+			);
+			path = DavidTextBar;
+			sourceTree = "<group>";
+		};
+		C77C8FDF215BA928009803A3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				C77C8FE0215BA928009803A3 /* NSString+Emoji.h */,
+				C77C8FE1215BA928009803A3 /* NSString+Emoji.m */,
+				C77C8FE2215BA928009803A3 /* UIView+Extension.h */,
+				C77C8FE3215BA928009803A3 /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		C77C8FE6215BA92F009803A3 /* WZBTextView */ = {
+			isa = PBXGroup;
+			children = (
+				C77C8FE7215BA92F009803A3 /* UITextView+WZB.h */,
+				C77C8FE8215BA92F009803A3 /* UITextView+WZB.m */,
+			);
+			path = WZBTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +195,7 @@
 				C77C8FBC215B9887009803A3 /* LaunchScreen.storyboard in Resources */,
 				C77C8FB9215B9887009803A3 /* Assets.xcassets in Resources */,
 				C77C8FB7215B9886009803A3 /* Main.storyboard in Resources */,
+				C77C8FD3215B9F0A009803A3 /* EmojiEmotion.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,8 +206,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77C8FE5215BA928009803A3 /* UIView+Extension.m in Sources */,
+				C77C8FCF215B9F0A009803A3 /* DavidEmotionPageView.m in Sources */,
+				C77C8FD2215B9F0A009803A3 /* DavidTextBar.m in Sources */,
+				C77C8FE9215BA92F009803A3 /* UITextView+WZB.m in Sources */,
+				C77C8FE4215BA928009803A3 /* NSString+Emoji.m in Sources */,
 				C77C8FB4215B9886009803A3 /* ViewController.m in Sources */,
+				C77C8FD1215B9F0A009803A3 /* DavidMediaView.m in Sources */,
 				C77C8FBF215B9887009803A3 /* main.m in Sources */,
+				C77C8FD0215B9F0A009803A3 /* DavidEmotionView.m in Sources */,
 				C77C8FB1215B9886009803A3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,12 +359,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XL6D4WP7U;
+				GCC_PREFIX_HEADER = /Users/kuaiyao002/Documents/kuaiyao_File/ChatToolBar/ChatToolBar/Header.h;
 				INFOPLIST_FILE = ChatToolBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aiitec.ChatToolBar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aiitec.MPsuda1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -304,12 +377,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7XL6D4WP7U;
+				GCC_PREFIX_HEADER = /Users/kuaiyao002/Documents/kuaiyao_File/ChatToolBar/ChatToolBar/Header.h;
 				INFOPLIST_FILE = ChatToolBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.aiitec.ChatToolBar;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aiitec.MPsuda1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
