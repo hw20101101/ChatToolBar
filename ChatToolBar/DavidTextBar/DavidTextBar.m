@@ -16,18 +16,6 @@
 @interface DavidTextBar()<UITextViewDelegate>
 
 /**
- 是否已切换为表情键盘
- */
-@property (assign, nonatomic) BOOL isEmotionKeyboard;
-
-
-/**
- 是否已切换为扩展键盘
- */
-@property (assign, nonatomic) BOOL isExtendKeyboard;
-
-
-/**
  转人工按钮
  */
 @property (strong, nonatomic) UIButton *artificialButton;
@@ -96,8 +84,10 @@
         _artificialButton.tag = DavidTextBarArtificialButton;
         _artificialButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         _artificialButton.frame = CGRectMake(14, self.height / 2 - ButtonWH / 2, ButtonWH, ButtonWH);
+        [_artificialButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [_artificialButton setTitle:@"人工" forState:UIControlStateNormal];
         [_artificialButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        [_artificialButton setBackgroundColor:[UIColor yellowColor]];
+        [_artificialButton setBackgroundColor:[UIColor lightGrayColor]];
         //        [_artificialButton setBackgroundImage:[UIImage imageNamed:@"add_button"] forState:UIControlStateNormal];
         //        [_artificialButton setBackgroundImage:[UIImage imageNamed:@"add_button_selected"] forState:UIControlStateSelected];
     }
@@ -112,10 +102,9 @@
         _extendButton.tag = DavidTextBarExtendButton;
         _extendButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         _extendButton.frame = CGRectMake(CGRectGetMaxX(self.emotionButton.frame) + ButtonMargin,  self.height / 2 - ButtonWH / 2, ButtonWH, ButtonWH);
-        [_extendButton setBackgroundColor:[UIColor redColor]];
         [_extendButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        [_extendButton setBackgroundImage:[UIImage imageNamed:@"add_button"] forState:UIControlStateNormal];
-        //        [_extendButton setBackgroundImage:[UIImage imageNamed:@"add_button_selected"] forState:UIControlStateSelected];
+        [_extendButton setBackgroundImage:[UIImage imageNamed:@"add_button"] forState:UIControlStateNormal];
+        [_extendButton setBackgroundImage:[UIImage imageNamed:@"add_button_selected"] forState:UIControlStateSelected];
     }
     return _extendButton;
 }
@@ -128,10 +117,9 @@
         _emotionButton.tag = DavidTextBarEmotionButton;
         _emotionButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
         _emotionButton.frame = CGRectMake(CGRectGetMaxX(self.textView.frame) + ButtonMargin, self.height / 2 - ButtonWH / 2, ButtonWH, ButtonWH);
-        [_emotionButton setBackgroundColor:[UIColor greenColor]];
         [_emotionButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-        //        [self.emotionButton setBackgroundImage:[UIImage imageNamed:@"emotion_button"] forState:UIControlStateNormal];
-        //        [self.emotionButton setBackgroundImage:[UIImage imageNamed:@"keyboard"] forState:UIControlStateSelected];
+        [_emotionButton setBackgroundImage:[UIImage imageNamed:@"emotion_button"] forState:UIControlStateNormal];
+        [_emotionButton setBackgroundImage:[UIImage imageNamed:@"keyboard"] forState:UIControlStateSelected];
     }
     return _emotionButton;
 }
@@ -143,15 +131,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDelete:) name:@"DavidEmotionPageViewDeleteNotification" object:nil];
 }
 
+#pragma mark - 还原默认的按钮图片
 - (void)resetButtonStatus{
-    self.isEmotionKeyboard = NO;
-    self.isExtendKeyboard = NO;
-}
-
--(void)setButtonsSelected:(BOOL)selected
-{
-    self.extendButton.selected = selected;
-    self.emotionButton.selected = selected; 
+    self.emotionButton.selected = NO;
+    self.extendButton.selected = NO;
 }
 
 #pragma mark - 发送消息
@@ -163,8 +146,6 @@
 
     //清空输入框
     [self.textView setText:@""];
-
-    //TODO: update frame
 }
 
 #pragma mark -- UItextViewDelegate
@@ -198,20 +179,21 @@
 #pragma mark - 点击表情/扩展键盘按钮
 -(void)buttonAction:(UIButton*)button
 {
+    button.selected = !button.selected;
+
     switch (button.tag) {
         case DavidTextBarExtendButton://点击扩展按钮
         {
-            self.isEmotionKeyboard = NO;
-            self.isExtendKeyboard = !self.isExtendKeyboard;
+            self.emotionButton.selected = NO;
 
             if ([self.delegate respondsToSelector:@selector(textBar:andButtonType:andSelected:)]) {
-                [self.delegate textBar:self andButtonType:DavidTextBarExtendButton andSelected:self.isExtendKeyboard];
+                [self.delegate textBar:self andButtonType:DavidTextBarExtendButton andSelected:button.selected];
             }
 
-            if (!self.isExtendKeyboard) {
-                [self.textView becomeFirstResponder];
-            }else{
+            if (button.selected) {
                 [self.textView resignFirstResponder];
+            }else{
+                [self.textView becomeFirstResponder];
             }
         }
             
@@ -219,24 +201,23 @@
             
         case DavidTextBarEmotionButton://点击表情按钮
         {
-            self.isExtendKeyboard = NO;
-            self.isEmotionKeyboard = !self.isEmotionKeyboard;
+            self.extendButton.selected = NO;
 
             if ([self.delegate respondsToSelector:@selector(textBar:andButtonType:andSelected:)]) {
-                [self.delegate textBar:self andButtonType:DavidTextBarEmotionButton andSelected:self.isEmotionKeyboard];
+                [self.delegate textBar:self andButtonType:DavidTextBarEmotionButton andSelected:button.selected];
             }
 
-            if (!self.isEmotionKeyboard) {
-                [self.textView becomeFirstResponder];
-            }else{
+            if (button.selected) {
                 [self.textView resignFirstResponder];
+            }else{
+                [self.textView becomeFirstResponder];
             }
         }
 
             break;
             
         case DavidTextBarArtificialButton://点击转人工按钮
-            //TODO 点击转人工按钮
+            
             [self upateSubViews];
             break;
     }

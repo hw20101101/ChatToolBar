@@ -281,10 +281,6 @@ typedef enum{
 -(void)textbarTextViewDidBeginEnditing:(DavidTextBar *)texBar
 {
     self.isShowEmotion = NO;
-
-    //    self.textBar.emotionButton.selected = NO;
-    //    self.textBar.addButton.selected = NO;
-    // TODO 0925 还原默认的按钮图片
 }
 
 -(void)mediaView:(DavidMediaView *)mediaView didClickAtButton:(DavidMediaViewButtonType)button

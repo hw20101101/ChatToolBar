@@ -20,7 +20,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.userInteractionEnabled = YES;
-        [self setButtonWithImage:@"camera_button" andButtonType:DavidMediaViewOrderButton andName:@"订单"];
+        [self setButtonWithImage:@"camera_button" andButtonType:DavidMediaViewOrderButton andName:@"相机"];
         [self setButtonWithImage:@"photo_button" andButtonType:DavidMediaViewPhotoButton andName:@"照片"];
     }
     return self;
@@ -30,36 +30,28 @@
 {
     UIButton *button = [[UIButton alloc] init];
     button.tag = buttonType;
-    button.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:14];
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     button.imageView.contentMode = UIViewContentModeScaleAspectFit;
     //    button.layer.cornerRadius = 5;
     //    button.layer.borderWidth = 0.5;
     //    button.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    [button setBackgroundColor:[UIColor lightGrayColor]];
+    //[button setBackgroundColor:[UIColor lightGrayColor]];
     [button setImage:[UIImage imageNamed:image] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
-    [button setTitle:name forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [self addSubview:button];
 }
 
 -(void)layoutSubviews
 {
     [super layoutSubviews];
-    
+
     CGFloat buttonWidthHeight = 60;
     CGFloat disWidth = (self.width - 4 * buttonWidthHeight) / 5;
     CGFloat originY = (self.height - 2 * buttonWidthHeight) / 3;
-    
+
     for (int i = 0; i < self.subviews.count; i ++) {
         UIButton *button = (UIButton*)self.subviews[i];
-        button.x = buttonWidthHeight * i + (i + 1) * disWidth;
-        button.y = originY;
-        button.width = buttonWidthHeight;
-        button.height = buttonWidthHeight;
-        button.titleEdgeInsets = UIEdgeInsetsMake(40-15/2 + 8, -button.imageView.frame.size.width, 0, 0);
-        button.imageEdgeInsets = UIEdgeInsetsMake(0, 15/2,15, -button.titleLabel.frame.size.width+15/2);
+        button.frame = CGRectMake(buttonWidthHeight * i + (i + 1) * disWidth, originY, buttonWidthHeight, buttonWidthHeight);
     }
 }
 

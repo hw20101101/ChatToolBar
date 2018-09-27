@@ -26,13 +26,10 @@ typedef enum {
 
 @property(nonatomic,assign) id<DavidTextBarDelegate> delegate;
 
-//-(void)setButtonsSelected:(BOOL)selected;
-
 /**
  消息发送事件
  */
 @property (copy, nonatomic) void (^doSendMessageAction)(NSString *model);
-
 
 /**
  重置表情按钮和扩展按钮的图片

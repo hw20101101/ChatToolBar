@@ -28,9 +28,9 @@
 
         //删除按钮
         self.deleteButton = [[UIButton alloc] init];
-        [self.deleteButton setBackgroundColor:[UIColor redColor]];
-//        [self.deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
-//        [self.deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete"] forState:UIControlStateNormal];
+        [self.deleteButton.titleLabel setFont:[UIFont systemFontOfSize:12]];
+        [self.deleteButton setTitle:@"DEL" forState:UIControlStateNormal];
+        [self.deleteButton setBackgroundColor:[UIColor lightGrayColor]];
         [self.deleteButton  addTarget:self action:@selector(deleteButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     }
     return self;
@@ -41,8 +41,7 @@
     _emotionArray = emotionArray;
     NSUInteger count = emotionArray.count;
     for (int i = 0 ; i < count; i++){
-        UIButton *button = [[UIButton alloc] init];
-        //button.backgroundColor = [UIColor randomColor];
+        UIButton *button = [[UIButton alloc] init];         
         NSDictionary *emotionDic = emotionArray[i];
         NSString *emotionCode = emotionDic[@"code"];
         
